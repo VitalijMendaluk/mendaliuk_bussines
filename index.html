@@ -444,7 +444,74 @@ h2{
 .fbtn-tg{border-color:rgba(37,232,224,.5);color:var(--cyan);background:rgba(37,232,224,.07)}
 .fbtn-ig{border-color:rgba(254,44,85,.5);color:var(--pink);background:rgba(254,44,85,.07)}
 
-footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;padding:0 0 30px}
+/* ---------- TARIFFS ---------- */
+.sub{text-align:center;color:var(--muted);font-size:14px;font-weight:500;margin:-14px auto 24px;max-width:30em}
+.plans{display:grid;gap:14px}
+.plan{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:24px 22px;
+  box-shadow:var(--shadow);
+  border:1.5px solid rgba(13,17,23,.08);
+  position:relative;
+}
+.plan-hit{background:var(--dark);border-color:rgba(37,232,224,.45);color:#fff}
+.plan-badge{
+  position:absolute;top:-11px;right:18px;
+  background:var(--pink);color:#fff;
+  font-size:11.5px;font-weight:800;
+  padding:4px 10px;border-radius:999px;
+}
+.plan h3{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.plan-for{color:var(--muted);font-size:13.5px;font-weight:500;margin-top:4px}
+.plan-hit .plan-for{color:rgba(255,255,255,.62)}
+.plan-price{display:flex;align-items:baseline;gap:10px;margin:16px 0 4px}
+.plan-price b{font-size:34px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.plan-price s{color:var(--muted);font-size:16px;font-weight:600}
+.plan-hit .plan-price s{color:rgba(255,255,255,.45)}
+.plan-term{color:var(--muted);font-size:12.5px;font-weight:600}
+.plan-hit .plan-term{color:rgba(255,255,255,.55)}
+.plan ul{list-style:none;margin-top:16px;display:grid;gap:8px}
+.plan li{position:relative;padding-left:24px;font-size:14px;font-weight:500;line-height:1.45}
+.plan li::before{
+  content:'';position:absolute;left:0;top:3px;
+  width:15px;height:15px;border-radius:50%;
+  background:var(--cyan) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230a0e14' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/9px no-repeat;
+}
+.plan li.no{color:var(--muted);text-decoration:line-through}
+.plan li.no::before{background:#e3e6ea url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b6572' stroke-width='4' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7 7 17'/%3E%3C/svg%3E") center/8px no-repeat}
+.plan li small{display:block;color:var(--muted);font-size:12.5px}
+.plan-hit li small{color:rgba(255,255,255,.55)}
+.pay-note{
+  margin-top:16px;
+  background:var(--card);
+  border-radius:18px;
+  padding:18px;
+  box-shadow:var(--shadow);
+  font-size:13.5px;font-weight:500;color:#2c3542;line-height:1.55;
+}
+.pay-note b{color:var(--text)}
+.pay-note a{color:var(--purple);font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.pay-logos{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.pay-logos span{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:28px;padding:0 10px;border-radius:7px;
+  background:#fff;border:1px solid rgba(13,17,23,.12);
+  font-size:12px;font-weight:800;letter-spacing:-.01em;color:#0d1117;
+}
+.pay-logos .visa{color:#1a1f71;font-style:italic;font-size:14px;letter-spacing:.02em}
+.pay-logos .mc svg{width:30px;height:18px}
+.pay-logos .wfp{color:#0f2350}
+
+/* ---------- FOOTER ---------- */
+footer{color:var(--muted);font-size:12.5px;font-weight:500;padding:8px 0 30px;line-height:1.6}
+.foot{border-top:1px solid rgba(13,17,23,.1);padding-top:22px;display:grid;gap:14px}
+.foot b{color:var(--text);font-weight:700}
+.foot a{color:var(--text)}
+.foot-links{display:flex;flex-wrap:wrap;gap:6px 16px}
+.foot-links a{font-weight:700;text-decoration:underline;text-underline-offset:2px}
+.foot .pay-logos{margin-top:0}
+.copy{font-size:12px}
 
 /* ---------- SMALL PHONES ---------- */
 @media (max-width:460px){
@@ -477,6 +544,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;paddi
   .tag-name{font-size:18px}
   .tag-role{font-size:12px}
   .cards{grid-template-columns:repeat(3,1fr)}
+  .plans{grid-template-columns:1fr 1fr;align-items:start}
   .card p{margin-bottom:26px}
   .trust{grid-template-columns:repeat(4,1fr)}
   .trust-item{border:none !important;text-align:left}
@@ -580,7 +648,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;paddi
         </div>
         <h3>TikTok для бізнесу</h3>
         <p>Консультації, запуск TikTok, UGC-реклама та стратегії, які приносять клієнтів</p>
-        <a href="https://tiktokquiz-xi.vercel.app/" class="card-cta btn" target="_blank" rel="noopener">
+        <a href="https://qwuiz-2.vercel.app/" class="card-cta btn" target="_blank" rel="noopener">
           <span>Записатися на консультацію</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -604,7 +672,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;paddi
         </div>
         <h3>Кейси та відгуки</h3>
         <p>Приклади робіт, результати клієнтів та відгуки про співпрацю</p>
-        <a href="https://vidguki.vercel.app/" class="card-cta btn">
+        <a href="#" class="card-cta btn">
           <span>Переглянути кейси</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
@@ -643,6 +711,58 @@ footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;paddi
           <div class="trust-num">Реальні<small>результати</small></div>
         </div>
         <div class="trust-desc">Кейси зростання продажів та впізнаваності</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Блок тарифів вимкнено. Щоб повернути — прибрати атрибут hidden. -->
+  <section class="wrap" id="tariffs" hidden>
+    <h2>Наставництво з TikTok</h2>
+    <p class="sub">Онлайн-програма на 4 тижні: від оформлення профілю до алгоритмів і перших заявок</p>
+    <div class="plans">
+
+      <article class="plan">
+        <h3>База</h3>
+        <p class="plan-for">Для тих, хто хоче швидко розібратися і запустити TikTok</p>
+        <div class="plan-price"><b>$199</b><s>$345</s></div>
+        <div class="plan-term">Тривалість: 1 місяць</div>
+        <ul>
+          <li>Повний доступ до всіх матеріалів</li>
+          <li>Усі 8 кроків навчання «Без води»<small>від оформлення до алгоритмів</small></li>
+          <li>Долаємо страх камери (програма на телефон)</li>
+          <li>Бонус 1: чек-лист «30 гачків»</li>
+          <li>Бонус 2: скрипт продажу в переписці</li>
+          <li>Бонус 3: гайд «Топ-10 помилок»</li>
+          <li class="no">Особистий чат з ментором</li>
+          <li class="no">Зідзвони з розбором</li>
+        </ul>
+      </article>
+
+      <article class="plan plan-hit">
+        <span class="plan-badge">Хіт продажів 🔥</span>
+        <h3>За руку</h3>
+        <p class="plan-for">Для тих, хто хоче запустити TikTok і отримати чіткий напрямок</p>
+        <div class="plan-price"><b>$399</b><s>$595</s></div>
+        <div class="plan-term">Тривалість: 1 місяць</div>
+        <ul>
+          <li>Все, що в тарифі «База», + усі VIP-бонуси</li>
+          <li>Повний супровід протягом місяця<small>від вибору ніші та ідей — до перших спроб залучення заявок</small></li>
+          <li>Особистий чат зі мною</li>
+          <li>1 зідзвон на тиждень по 40 хвилин (Zoom / Google Meet)<small>розбираємо ваш TikTok, контент, сценарії, помилки і що заважає отримувати клієнтів</small></li>
+        </ul>
+      </article>
+
+    </div>
+
+    <div class="pay-note">
+      <b>Як оплатити.</b> Спочатку проводимо безкоштовну консультацію. Після неї я надсилаю вам персональне посилання на оплату через платіжний сервіс WayForPay: повну оплату тарифу або бронювання місця. Доступ до навчання надходить на вашу електронну пошту одразу після оплати. Повернення коштів можливе протягом 14 днів.
+      <br>Детальніше: <a href="terms.html">Умови надання послуг</a>, <a href="refund.html">Повернення коштів</a>, <a href="oferta.html">Публічна оферта</a>.
+      <div class="pay-logos" aria-label="Способи оплати">
+        <span class="visa">VISA</span>
+        <span class="mc" aria-label="Mastercard"><svg viewBox="0 0 30 18"><circle cx="11" cy="9" r="8" fill="#eb001b"/><circle cx="19" cy="9" r="8" fill="#f79e1b" fill-opacity=".9"/></svg></span>
+        <span>Apple Pay</span>
+        <span>Google Pay</span>
+        <span class="wfp">WayForPay</span>
       </div>
     </div>
   </section>
@@ -709,7 +829,30 @@ footer{text-align:center;color:var(--muted);font-size:12px;font-weight:500;paddi
 
 </main>
 
-<footer>© 2026 Віталік Мендалюк. Всі права захищені.</footer>
+<footer class="wrap">
+  <div class="foot">
+    <div>
+      <b>ФОП Мендалюк Лариса Григорівна</b><br>
+      ІПН (РНОКПП): 2604217625<br>
+      Юридична та фактична адреса: Україна, Рівненська обл., с. Річки, вул. Шкільна, 13<br>
+      Телефон: <a href="tel:+380509848037">+38 050 984 80 37</a><br>
+      Email: <a href="mailto:vitalii.mendaliuk@gmail.com">vitalii.mendaliuk@gmail.com</a>
+    </div>
+    <nav class="foot-links" aria-label="Правова інформація">
+      <a href="oferta.html">Публічна оферта</a>
+      <a href="terms.html">Умови надання послуг</a>
+      <a href="refund.html">Повернення коштів</a>
+    </nav>
+    <div class="pay-logos" aria-label="Способи оплати">
+      <span class="visa">VISA</span>
+      <span class="mc" aria-label="Mastercard"><svg viewBox="0 0 30 18"><circle cx="11" cy="9" r="8" fill="#eb001b"/><circle cx="19" cy="9" r="8" fill="#f79e1b" fill-opacity=".9"/></svg></span>
+      <span>Apple Pay</span>
+      <span>Google Pay</span>
+      <span class="wfp">WayForPay</span>
+    </div>
+    <div class="copy">© 2026 Віталій Мендалюк — автор і ментор програми. Всі права захищені.</div>
+  </div>
+</footer>
 
 </body>
 </html>
